@@ -367,7 +367,7 @@ padding-right: .5rem;
 
 
 /* media quries */
-@mdia (max-width:120px){
+@media (max-width:120px){
   section{
       padding:3rem 5%;
   }
