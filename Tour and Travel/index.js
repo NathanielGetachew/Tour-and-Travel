@@ -19,3 +19,28 @@ const swiper = new Swiper(".home-slider", {
         prevEl: ".swiper-button-prev",
     },
 });
+const swiper1 = new Swiper('.reviews-slider', {
+    loop:true,
+    spaceBetween:20,
+    autoHeight:true,
+    grabCursor:true,
+    
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      640: {
+        slidesPerView: 2,
+        
+      },
+      // when window width is >= 480px
+      768: {
+        slidesPerView: 3,
+       
+      },
+      // when window width is >= 640px
+      1024: {
+        slidesPerView: 4,
+        
+      }
+    }
+  });
