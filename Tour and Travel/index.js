@@ -19,28 +19,42 @@ const swiper = new Swiper(".home-slider", {
         prevEl: ".swiper-button-prev",
     },
 });
-const swiper1 = new Swiper('.reviews-slider', {
-    loop:true,
-    spaceBetween:20,
-    autoHeight:true,
-    grabCursor:true,
-    
-    // Responsive breakpoints
-    breakpoints: {
-      // when window width is >= 320px
-      640: {
-        slidesPerView: 2,
-        
-      },
-      // when window width is >= 480px
-      768: {
-        slidesPerView: 3,
-       
-      },
-      // when window width is >= 640px
-      1024: {
-        slidesPerView: 4,
-        
-      }
-    }
-  });
+
+var swiper1 = new Swiper(".reviews-slider", {
+  slidesPerView: 1,
+  loop:true,
+  autoHeight:true,
+  grabCursor:true,
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+  },
+});
+let loadMoreBtn = document.querySelector('.packages .load-more .btn');
+let currentItem = 2;
+
+loadMoreBtn.onclick = () =>{
+  let boxes = [ ...document.querySelectorAll('.packages .box-container .box')];
+  for (var i = currentItem; i < currentItem + 3; i++){
+    boxes[i].style.display = 'inline-block'
+  };
+  currentItem += 2;
+   if(currentItem >= boxes.length){
+    loadMoreBtn.style.display ='none'
+   }
+}
+
